@@ -1,0 +1,53 @@
+class 1 -
+Cucumber -
+
+Java - programming language
+Selenium - automate web based application
+
+no reports in selenium
+no common ground for all the team members
+
+no main method for execution - no control of execution
+
+smoke
+regression
+
+framework - this is the final outcome of the complete concepts
+
+cucumber as a tool
+cucumber/BDD/gherkin as a framework
+
+Create a new project
+File -> new -> Project -> Maven -> groupId -> artifactId -> click create
+
+group id - it means the name of the organisation
+artifact id - it means the name of the project
+
+
+we created maven project -
+pom.xml file is the configuration file where we will add all the dependencies
+pom.xml is the file we will use to execute our code in the end of the framework
+pom.xml is the file we will use to generate the report
+
+in our project we get src folder in which we get main and test
+
+main - the code we write to develop the application, we write it in main
+test - the code we write to test the application, we write it in test
+
+we delete main folder because we will work with test
+
+in test folder -
+we get java - to keep all the java stuff
+we get resources - to keep all the non java stuff
+
+java
+selenium
+cucumber
+apache poi
+commons
+
+
+
+
+
+
