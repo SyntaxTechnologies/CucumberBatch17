@@ -21,11 +21,11 @@ public class LoginSteps {
 
     @When("user enters admin username and password")
     public void user_enters_admin_username_and_password() throws InterruptedException {
-      WebElement usernameTextField = driver.findElement(By.xpath("//*[@id='txtUsername']"));
-      usernameTextField.sendKeys("admin");
-      Thread.sleep(2000);
-      WebElement passwordTextField = driver.findElement(By.cssSelector("input#txtPassword"));
-      passwordTextField.sendKeys("Hum@nhrm123");
+        WebElement usernameTextField = driver.findElement(By.xpath("//*[@id='txtUsername']"));
+        usernameTextField.sendKeys("admin");
+        Thread.sleep(2000);
+        WebElement passwordTextField = driver.findElement(By.cssSelector("input#txtPassword"));
+        passwordTextField.sendKeys("Hum@nhrm123");
     }
 
     @When("user clicks on login button")
