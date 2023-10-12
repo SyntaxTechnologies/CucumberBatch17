@@ -46,6 +46,44 @@ cucumber
 apache poi
 commons
 
+Class 2 -
+Recap -
+in selenium, we dont have reporting option, no execution control, no standard format
+of writing the code. To achieve all these, we need to integrate our scripts with
+additional tools and structure (framework)
+
+cucumber is a tool which allows us to write scenarios in plain english text called
+gherkin which follows behavioral driven development.
+
+we created maven project
+we have java, selenium, cucumber, apache poi
+
+User story - 12345 - Valid admin login
+
+Scenario -
+
+Given - pre condition
+when - actions
+Then - expected result
+And - supporting tag
+
+Given user is navigated to HRMS application
+When user enters admin username and password
+And user clicks on login button
+Then admin user is successfully logged in
+
+in cucumber, every single test case will be considered as a scenario
+
+we write scenario in cucumber in a special file called feature file having the
+extension .feature
+
+
+
+
+
+
+
+
 
 
 
