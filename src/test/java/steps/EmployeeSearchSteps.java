@@ -45,4 +45,10 @@ public class EmployeeSearchSteps extends CommonMethods {
         System.out.println("Test passed");
     }
 
+    @When("user enters valid employee name")
+    public void user_enters_valid_employee_name() {
+       WebElement nameTextField = driver.findElement(By.id("empsearch_employee_name_empName"));
+       nameTextField.sendKeys("mali");
+    }
+
 }

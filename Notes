@@ -114,10 +114,20 @@ based on the requirement
 in runners package, we will create all the test runner classes
 features
 glue
+dry run
+tags
 
+there is a need through which I can execute one scenario among multiple
+same tag name must be provided in scenario as it is in runner class
+sprint 5
+sprint 1,2,3,4 - 8, 5, 7, 9
+we use 'or' keyword to execute scenarios from either conditions
+if one condition is true, it will execute the scenario
 
+we use 'and' keyword to execute the scenarios when both conditions must be true
 
-utils folder - to create common methods class so that we can use all the commmon functions from this class
+utils folder - to create common methods class so that we can use all the commmon
+functions from this class
 
 
 

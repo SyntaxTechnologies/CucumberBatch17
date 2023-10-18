@@ -11,7 +11,14 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         //glue is where we find implementation of gherkin steps
         //we provide the path of package where we defined all the step def
-        glue = "steps"
+        glue = "steps",
+        //if we set the value of dry run to true, it will stop the execution
+        //it quickly scans all the gherkin steps in all the feature files and will give
+        //you the missing step definition
+        //for actual execution, we need to set the value of it to false
+        dryRun = false,
+        //tags will identify the scenarios in a group and will execute all the scenarios having these tags
+        tags = "@regression and @nafiseh"
 )
 
 public class RunnerClass {
