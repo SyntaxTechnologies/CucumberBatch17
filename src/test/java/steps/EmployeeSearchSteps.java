@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.CommonMethods;
 
+import java.time.Duration;
+
 public class EmployeeSearchSteps extends CommonMethods {
 
   //  public WebDriver driver;
@@ -15,18 +17,21 @@ public class EmployeeSearchSteps extends CommonMethods {
     public void user_clicks_on_pim_option() {
         WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
         pimOption.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user clicks on Employee List option")
     public void user_clicks_on_employee_list_option() {
         WebElement empListOption = driver.findElement(By.id("menu_pim_viewEmployeeList"));
         empListOption.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user enters employee id")
     public void user_enters_employee_id() {
         WebElement empIdTextBox = driver.findElement(By.id("empsearch_id"));
         empIdTextBox.sendKeys("65230336");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user clicks on search button")

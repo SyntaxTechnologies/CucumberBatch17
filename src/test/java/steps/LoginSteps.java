@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import utils.CommonMethods;
 
+import java.time.Duration;
+
 public class LoginSteps extends CommonMethods {
 
    // public WebDriver driver;
@@ -17,14 +19,16 @@ public class LoginSteps extends CommonMethods {
     public void user_is_navigated_to_hrms_application() throws InterruptedException {
         driver = new ChromeDriver();
         driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
-        Thread.sleep(2000);
+       // Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user enters admin username and password")
     public void user_enters_admin_username_and_password() throws InterruptedException {
         WebElement usernameTextField = driver.findElement(By.xpath("//*[@id='txtUsername']"));
         usernameTextField.sendKeys("admin");
-        Thread.sleep(2000);
+      //  Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebElement passwordTextField = driver.findElement(By.cssSelector("input#txtPassword"));
         passwordTextField.sendKeys("Hum@nhrm123");
     }
@@ -33,7 +37,8 @@ public class LoginSteps extends CommonMethods {
     public void user_clicks_on_login_button() throws InterruptedException {
         WebElement loginButton = driver.findElement(By.xpath("//*[@value='LOGIN']"));
         loginButton.click();
-        Thread.sleep(2000);
+    //    Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Then("user is successfully logged in")
