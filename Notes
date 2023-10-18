@@ -129,6 +129,31 @@ we use 'and' keyword to execute the scenarios when both conditions must be true
 utils folder - to create common methods class so that we can use all the commmon
 functions from this class
 
+Class 4 -
+
+recap -
+test runner is a class through which we can execute all the test cases and can also control
+the flow of execution.
+
+options we add in runner class
+features - path to the feature directory
+glue - it provides the path of step definitions classes
+dry run - to generate the missing step def, we set dry run to true.
+tags - in order to execute scenarios in a group, we execute them with tags.
+we use 'and' and 'or' keyword to execute based on the conditions.
+we must put , in between 2 cucumber options in runner class.
+
+as per the standards/characteristics of framework
+code reusability must be there
+it should be easily expandable
+it should be easily understandable
+new person should be able to work with it with minimal guidance
+things which are used multiple places cannot be hard coded
+
+click -
+send keys -
+
+cross browser testing - when your scripts execute against multiple browser, it is cross browser testing
 
 
 

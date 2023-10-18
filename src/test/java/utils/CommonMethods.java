@@ -6,4 +6,6 @@ public class CommonMethods {
 
     public static WebDriver driver;
 
+
+
 }
