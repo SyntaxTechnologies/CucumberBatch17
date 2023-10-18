@@ -97,6 +97,29 @@ Scenario - search employee by id
     And user clicks on search button
     Then user should be able to see employee details
 
+class 3 -
+
+for feature file, we need step definitions to execute the code.
+
+we need one point of execution.
+
+as per the standards, for employeesearch feature, we need employeesearch steps class
+to write all the steps definition
+
+we cannot write duplicate steps in step definitions classes
+
+runner class - we execute all the scenarios, some of the scenarios or one of the scenarios
+based on the requirement
+
+in runners package, we will create all the test runner classes
+features
+glue
+
+
+
+utils folder - to create common methods class so that we can use all the commmon functions from this class
+
+
 
 
 
