@@ -16,28 +16,32 @@ public class EmployeeSearchSteps extends CommonMethods {
     @When("user clicks on PIM option")
     public void user_clicks_on_pim_option() {
         WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
-        pimOption.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+      //  pimOption.click();
+        click(pimOption);
+    //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user clicks on Employee List option")
     public void user_clicks_on_employee_list_option() {
         WebElement empListOption = driver.findElement(By.id("menu_pim_viewEmployeeList"));
-        empListOption.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        click(empListOption);
+        //empListOption.click();
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user enters employee id")
     public void user_enters_employee_id() {
         WebElement empIdTextBox = driver.findElement(By.id("empsearch_id"));
-        empIdTextBox.sendKeys("65230336");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        sendText(empIdTextBox, "65230336");
+       // empIdTextBox.sendKeys("65230336");
+      //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user clicks on search button")
     public void user_clicks_on_search_button() {
         WebElement searchButton = driver.findElement(By.id("searchBtn"));
-        searchButton.click();
+        click(searchButton);
+        //searchButton.click();
     }
 
     @Then("user should be able to see employee details")
@@ -48,7 +52,8 @@ public class EmployeeSearchSteps extends CommonMethods {
     @When("user enters valid employee name")
     public void user_enters_valid_employee_name() {
        WebElement nameTextField = driver.findElement(By.id("empsearch_employee_name_empName"));
-       nameTextField.sendKeys("mali");
+    //   nameTextField.sendKeys("mali");
+        sendText(nameTextField, "mali");
     }
 
 }
