@@ -157,6 +157,13 @@ cross browser testing - when your scripts execute against multiple browser, it i
 
 we need constants class to pass the path of all the constant files such as config, testdata etc.
 
+background - for all the common steps of the scenarios, we can write them here.
+till the time flow is same, we can take the steps. Once the flow changed, we can't take steps
+
+it is limited to one feature file. It means, for different feature files, background will be
+different
+
+
 
 
 
