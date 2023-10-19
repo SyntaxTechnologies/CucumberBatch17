@@ -155,6 +155,7 @@ send keys -
 
 cross browser testing - when your scripts execute against multiple browser, it is cross browser testing
 
+we need constants class to pass the path of all the constant files such as config, testdata etc.
 
 
 

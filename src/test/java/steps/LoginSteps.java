@@ -17,10 +17,11 @@ public class LoginSteps extends CommonMethods {
 
     @Given("user is navigated to HRMS application")
     public void user_is_navigated_to_hrms_application() throws InterruptedException {
-        driver = new ChromeDriver();
-        driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
+      //  driver = new ChromeDriver();
+     //   driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
        // Thread.sleep(2000);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+      //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        openBrowserAndLaunchApplication();
     }
 
     @When("user enters admin username and password")
