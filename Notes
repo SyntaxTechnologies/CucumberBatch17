@@ -176,6 +176,17 @@ background is applicable for one feature file.
 
 order of execution - background execute -> scenario execute
 
+Hooks - hooks are used to write the pre condition and post condition of the project
+we need to create hooks class under steps package
+when we execute the code, hooks class will execute pre condition first and then all the
+test cases will be executed and then post condition will execute at last
+
+DONT FORGET TO COMMENT STEPS FROM ALL FEATURE FILES FOR PRE AND POST CONdITION
+
+in the framework, we cannot pass any hard coded data. cucumber allows us to perform
+data driven testing
+
+
 
 
 

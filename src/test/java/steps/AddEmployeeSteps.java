@@ -40,4 +40,15 @@ public class AddEmployeeSteps extends CommonMethods {
     public void user_closes_the_browser() {
         closeBrowser();
     }
+
+    @When("user enters {string} and {string} and {string}")
+    public void user_enters_and_and(String firstN, String middleN, String lastN) {
+        WebElement firstNameField = driver.findElement(By.id("firstName"));
+        WebElement middleNameField = driver.findElement(By.id("middleName"));
+        WebElement lastNameField = driver.findElement(By.id("lastName"));
+
+        sendText(firstNameField, firstN);
+        sendText(middleNameField,middleN);
+        sendText(lastNameField, lastN);
+    }
 }
