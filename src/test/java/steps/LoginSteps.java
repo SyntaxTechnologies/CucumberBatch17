@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.LoginPage;
 import utils.CommonMethods;
 import utils.ConfigReader;
 
@@ -27,21 +28,24 @@ public class LoginSteps extends CommonMethods {
 
     @When("user enters admin username and password")
     public void user_enters_admin_username_and_password() throws InterruptedException {
-        WebElement usernameTextField = driver.findElement(By.xpath("//*[@id='txtUsername']"));
+        //object of the login page class to access all the web elements
+        LoginPage lp = new LoginPage();
+       // WebElement usernameTextField = driver.findElement(By.xpath("//*[@id='txtUsername']"));
     //    usernameTextField.sendKeys("admin");
       //  Thread.sleep(2000);
-        sendText(usernameTextField, ConfigReader.getPropertyValue("username"));
+        sendText(lp.usernameTextField, ConfigReader.getPropertyValue("username"));
       //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        WebElement passwordTextField = driver.findElement(By.cssSelector("input#txtPassword"));
-        sendText(passwordTextField, ConfigReader.getPropertyValue("password"));
+     //   WebElement passwordTextField = driver.findElement(By.cssSelector("input#txtPassword"));
+        sendText(lp.passwordTextField, ConfigReader.getPropertyValue("password"));
        // passwordTextField.sendKeys("Hum@nhrm123");
 
     }
 
     @When("user clicks on login button")
     public void user_clicks_on_login_button() throws InterruptedException {
-        WebElement loginButton = driver.findElement(By.xpath("//*[@value='LOGIN']"));
-        click(loginButton);
+        LoginPage lp = new LoginPage();
+        //WebElement loginButton = driver.findElement(By.xpath("//*[@value='LOGIN']"));
+        click(lp.loginBtn);
     //    loginButton.click();
     //    Thread.sleep(2000);
      //   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

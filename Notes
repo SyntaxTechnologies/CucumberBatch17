@@ -196,6 +196,20 @@ execute based on the number of data sets
 
 order of execution -  hooks -> background -> scenario
 
+Page object model - it is a design pattern which says that we create separate
+individual class as per the screens of the application. such as for login screen
+we will create loginpage class, for dashboard screen we will create dashboardpage class
+
+we keep all the locators of the login screen in loginpage class and same we will
+do for all the classes
+
+constructor we use to initialize the object and the elements of the class
+we will call selenium page factory to initialize all the elements of the class
+and we call it in constructor
+
+
+
+
 
 
 

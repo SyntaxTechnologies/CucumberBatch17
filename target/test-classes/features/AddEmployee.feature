@@ -39,9 +39,11 @@ Feature: add employee scenario
     Then employee added successfully
     Examples:
       | firstName | middleName | lastName |
-      |donal      |ms          |duck      |
-      |tamoha     |ms          |jimo      |
-      |joe        |ms          |trump     |
+      |donal1      |ms          |duck      |
+      |tamoha1     |ms          |jimo      |
+      |joe1        |ms          |trump     |
+
+
 
 
 
