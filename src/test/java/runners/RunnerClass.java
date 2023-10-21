@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         //for actual execution, we need to set the value of it to false
         dryRun = true,
         //tags will identify the scenarios in a group and will execute all the scenarios having these tags
-        tags = "@cucumber"
+        tags = "@ddt"
 )
 
 public class RunnerClass {

@@ -186,6 +186,9 @@ DONT FORGET TO COMMENT STEPS FROM ALL FEATURE FILES FOR PRE AND POST CONdITION
 in the framework, we cannot pass any hard coded data. cucumber allows us to perform
 data driven testing
 
+data driven testing - when one scenario executed against multiple set of data, we call it
+data driven testing approach
+
 
 
 
