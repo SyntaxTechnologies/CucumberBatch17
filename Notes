@@ -189,6 +189,15 @@ data driven testing
 data driven testing - when one scenario executed against multiple set of data, we call it
 data driven testing approach
 
+scenario vs scenario outline -
+scenario execute against one set of data from the feature file
+scenario outline has examples table where we keep multiple sets of data and it will
+execute based on the number of data sets
+
+order of execution -  hooks -> background -> scenario
+
+
+
 
 
 
