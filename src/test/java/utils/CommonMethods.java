@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,7 +19,7 @@ public class CommonMethods {
     public static void openBrowserAndLaunchApplication(){
         ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         switch (ConfigReader.getPropertyValue("browser")){
-            case "chrome":
+            case "Chrome":
                 driver = new ChromeDriver();
                 break;
             case "firefox":
@@ -63,7 +64,7 @@ public class CommonMethods {
     }
 
     public void closeBrowser(){
-        driver.quit();
+      //  driver.quit();
     }
 
 
