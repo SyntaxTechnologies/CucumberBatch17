@@ -161,7 +161,24 @@ background - for all the common steps of the scenarios, we can write them here.
 till the time flow is same, we can take the steps. Once the flow changed, we can't take steps
 
 it is limited to one feature file. It means, for different feature files, background will be
-different
+different.
+
+class 5 -
+recap -
+
+how to pass the data from config file -
+we wrote some of the common methods in common methods class
+
+background - common steps from all the scenarios we can take and put it under background
+**only till the flow is same**
+
+background is applicable for one feature file.
+
+order of execution - background execute -> scenario execute
+
+
+
+
 
 
 
