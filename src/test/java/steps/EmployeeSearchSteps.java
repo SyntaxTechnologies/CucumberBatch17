@@ -56,5 +56,4 @@ public class EmployeeSearchSteps extends CommonMethods {
     //   nameTextField.sendKeys("mali");
         sendText(employeeSearchPage.empSearchNameField, "mali");
     }
-
 }

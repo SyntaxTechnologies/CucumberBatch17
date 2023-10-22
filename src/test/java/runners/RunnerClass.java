@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         //for actual execution, we need to set the value of it to false
         dryRun = false,
         //tags will identify the scenarios in a group and will execute all the scenarios having these tags
-        tags = "@test1"
+        tags = "@excel"
 )
 
 public class RunnerClass {

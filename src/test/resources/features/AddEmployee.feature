@@ -43,6 +43,11 @@ Feature: add employee scenario
       |tamoha1     |ms          |jimo      |
       |joe1        |ms          |trump     |
 
+    @excel
+    Scenario: Adding multiple employees from excel file
+      When user adds multiple employees from excel using "Sheet1" and verify them
+
+
 
 
 
