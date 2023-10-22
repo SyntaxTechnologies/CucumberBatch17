@@ -6,13 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CommonMethods {
+public class CommonMethods extends PageInitializer {
 
     public static WebDriver driver;
 
@@ -30,6 +31,7 @@ public class CommonMethods {
         }
         driver.manage().window().maximize();
         driver.get(ConfigReader.getPropertyValue("url"));
+        initializePageObjects();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICIT_WAIT));
     }
 
