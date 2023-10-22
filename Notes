@@ -207,6 +207,26 @@ constructor we use to initialize the object and the elements of the class
 we will call selenium page factory to initialize all the elements of the class
 and we call it in constructor
 
+class 6 -
+
+recap -
+data driven testing - when scripts execute against multiple sets of data we call it
+ddt.
+
+scenario outline we have to use to achieve ddt in cucumber with examples table
+
+hooks - background - scenario -
+
+hooks - in steps package, we write hooks class.
+@before - pre condition
+@after - post condition
+
+POM - page object model design pattern
+we create separate classes for separate screens of the application
+
+with the help of constructor, we initialize all the web elements
+
+
 
 
 
