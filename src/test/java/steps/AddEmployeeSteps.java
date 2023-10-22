@@ -102,4 +102,21 @@ public class AddEmployeeSteps extends CommonMethods {
         }
 
     }
+
+    @When("user adds multiple employees from data table")
+    public void user_adds_multiple_employees_from_data_table
+            (io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+        List<Map<String, String>> employeeNames = dataTable.asMaps();
+
+        for (Map<String, String> map:employeeNames
+             ) {
+            sendText(addEmployeePage.firstNameLoc, map.get("firstName"));
+            sendText(addEmployeePage.middleNameLoc, map.get("middleName"));
+            sendText(addEmployeePage.lastNameLoc, map.get("lastName"));
+            click(addEmployeePage.saveBtn);
+            Thread.sleep(2000);
+            click(dashboardPage.addEmployeeButton);
+            Thread.sleep(2000);
+        }
+    }
 }
