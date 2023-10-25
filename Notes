@@ -249,6 +249,11 @@ right click on the report -> open in -> browser -> chrome
 
 
 
+maven surefire plugin we use to create a single project entity
+from here we can execute all of our test cases
+
+we should focus on buld success message for executing pom.xml file
+the way we added plugin in runnner class, we have to add plugin in pom.xml for reports
 
 
 
