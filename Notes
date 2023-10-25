@@ -226,6 +226,31 @@ we create separate classes for separate screens of the application
 
 with the help of constructor, we initialize all the web elements
 
+class 7 -
+
+recap -
+data driven testing
+we can achieve ddt using excel file when the volume of data is big
+we can achieve ddt using data table
+we can achieve ddt using examples table
+
+data table vs examples table
+data table is specific for just one step. However, examples table is for complete
+scenario
+
+page initializer class - to create objects of the classes we need centralized class
+that's why we use page initializer which we call in common methods.
+
+reporting in framework -
+it gives us the complete information of the execution.
+
+for opening the html report in
+right click on the report -> open in -> browser -> chrome
+
+
+
+
+
 
 
 
