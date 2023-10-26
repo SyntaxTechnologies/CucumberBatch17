@@ -8,7 +8,7 @@ Feature: Employee search
     * user clicks on PIM option
     * user clicks on Employee List option
 
-  @sprint2 @ahmed @regression @emp @test
+  @sprint2 @ahmed @regression @emp @test123
   Scenario: Search an employee by Id
   #  Given user is navigated to HRMS application
   #  When user enters admin username and password
@@ -21,7 +21,7 @@ Feature: Employee search
     * user should be able to see employee details
     #Then user closes the browser
 
-  @sprint4 @ali @regression @emp @test
+  @sprint4 @ali @regression @emp
   Scenario: Search an employee by name
     #Given user is navigated to HRMS application
    # When user enters admin username and password

@@ -18,12 +18,14 @@ import org.junit.runner.RunWith;
         //for actual execution, we need to set the value of it to false
         dryRun = false,
         //tags will identify the scenarios in a group and will execute all the scenarios having these tags
-        tags = "@excel",
+        tags = "@test123",
         //for generating the report
         //pretty is responsible for printing the step and step definition in the console
         //in your framework, all reports should be generated under target folder
         //we will generate html report in target folder
-        plugin = {"pretty", "html:target/cucumber.html","json:target/cucumber.json"}
+        plugin = {"pretty", "html:target/cucumber.html",
+                "json:target/cucumber.json", "rerun:target/failed.txt"}
+        //rerun plugin will create failed.txt under target for all failed tc
 )
 
 public class RunnerClass {
