@@ -252,8 +252,25 @@ right click on the report -> open in -> browser -> chrome
 maven surefire plugin we use to create a single project entity
 from here we can execute all of our test cases
 
-we should focus on buld success message for executing pom.xml file
+we should focus on build success message for executing pom.xml file
 the way we added plugin in runnner class, we have to add plugin in pom.xml for reports
+
+class 8 -
+
+recap -
+
+reports - we get html reports, json report and maven cucumber report from our
+framework - All these type of reports is generated under target folder
+
+take screenshot method - cucumber accept array of byte for the screenshot
+Scenario class holds the complete status of the execution such as test case name,
+status etc.
+
+maven cucumber report plugin we used from pom.xml file to execute the test cases and
+generate the report from the pom.xml file
+
+assertion - whenever we write test cases, we need to validate the functionality of it
+in cucumber framework we use junit assertions to do the same.
 
 
 

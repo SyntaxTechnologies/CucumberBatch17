@@ -3,6 +3,7 @@ package steps;
 import com.sun.tools.jconsole.JConsoleContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.CommonMethods;
@@ -93,12 +94,39 @@ public class AddEmployeeSteps extends CommonMethods {
             sendText(addEmployeePage.usernameEmp, employeeMap.get("Username"));
             sendText(addEmployeePage.passwordEmp, employeeMap.get("Password"));
             sendText(addEmployeePage.confirmPassword, employeeMap.get("confirmPassword"));
+            //we are storing the emp id from the locator
+            String empIdValue =
+                    addEmployeePage.employeeIdLocator.getAttribute("value");
             click(addEmployeePage.saveBtn);
             Thread.sleep(2000);
+
+            //verification of employee still pending
+            click(dashboardPage.empListButton);
+            //we need to search the employee by the stored employee id
+            sendText(employeeSearchPage.empSearchIdField, empIdValue);
+            click(employeeSearchPage.searchBtn);
+
+            //after searching the employee, it returns the info in format
+            //empid firstname middlename lastname this is the format
+           List<WebElement> rowData =
+                   driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr"));
+
+           for (int i=0; i<rowData.size(); i++){
+               //it will give me the data from all the cell of the row
+               String rowText = rowData.get(i).getText();
+               System.out.println(rowText);
+               //it is we are getting from excel to compare with web table data
+            String expectedDataFromExcel = empIdValue + " " + employeeMap.get("firstName")
+                    + " " + employeeMap.get("middleName") + " "
+                    + employeeMap.get("lastName");
+               System.out.println(expectedDataFromExcel);
+               Assert.assertEquals(expectedDataFromExcel, rowText);
+
+           }
             //because we want to add many employees
             click(dashboardPage.addEmployeeButton);
             Thread.sleep(2000);
-            //verification of employee still pending
+
         }
 
     }
