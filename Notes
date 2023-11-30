@@ -640,6 +640,23 @@ validating the value in json format
 
 Rest Assured
 
+rest web services, this allows us to send the data in JSON format.
+JSON consist of key and value pairs
+
+Rest assured - it is a DSL language (Domain specific language)
+
+we have to add 2 dependency - Rest assured and JSON
+
+rest assured follows BDD approach
+
+given - to prepare the request
+when - sending the request/hitting the endpoint
+then - validation/assertions
+
+
+
+
+
 
 
 
