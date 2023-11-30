@@ -274,6 +274,432 @@ in cucumber framework we use junit assertions to do the same.
 
 
 
+----------------------------------------------
+API
+----------------------------------------------
+
+Class 1 - API -
+
+Restaurant -
+
+table -
+customer/client - raihana - request
+
+waiter  - rakhima - taking the request - taking the response
+ -
+chef -  ismael - responding to request
+
+
+chase bank
+wells fargo
+bank of america
+citi
+capital
+
+chase bank - chase atm - no extra money
+chase bank - citi atm - extra money
+
+				Federal bank server
+
+citi  - (citi bank server)
+chase - ( chase bank server )
+wells fargo
+
+client - the one who sends the request
+server - the one who responds to the request
+API - the one who transfers the request and the response
+
+Client server architecture -
+
+presentation layer - what we see on the screen is presentation layer
+Application layer - where the business logic is written
+Data layer - where the data comes from (Database)
+
+1 tier architecture - when your presentation layer, application and data layer are available at one place.
+standalone applications (desktop based application)
+
+2 tier architecture -
+when presentation layer is available at one place and application/data layer is available at another place.
+examples - dominoz, pizza hut, subway, walmart etc
+
+3 tier architecture -
+
+when presentation layer is available at one place, application layer is availbale at second place and data layer is available at 3rd place
+examples - syntax HRMS
+
+n-tier architecture / distributed architecture -  extended version of 3 tier architecture
+
+
+to connect all these systems, we need API
+
+to make the communication between the systems developed in different programming languages
+to maintain the security of the data
+
+front end - selenium
+back end - sql
+
+to identify the glitch in the API, we need to test them
+
+Swagger document - it is the centralized document we have for the api testing and the instructions.
+
+
+Base URL - 192.198.22.33 - www.amazon.com
+End points - /toys , /homedecor, /musicsystem etc
+
+
+API's which are hosted over the internet are called web services.
+
+All web services are API's but All API's are not web services.
+
+
+Create
+Retrieve
+Update
+Delete
+
+CRUD operations.
+
+Class 2 -
+
+recap -
+
+client -
+server -
+API -
+
+request -
+response -
+
+client-server architecture -
+
+1 tier architecture
+2 tier architecture
+3 tier architecture
+n tier architecture
+
+CRUD - create, retrieve, update and delete
+
+API's which are hosted over the internet are called web services.
+
+HTTP - hyper text transfer protocol - this is the internet protocol which we used to communicate with the website.
+
+swagger document - this document will give us the information about API's to test.
+
+webservices - we have to test web services
+
+2 types of web services -
+REST - representational state transfer
+SOAP - simple object access protocol
+
+speed
+REST is fast
+SOAP is slow
+
+secured
+SOAP is more secured
+REST is less secured
+
+REST API - we will work with REST API
+
+What is URI - uniform resource identifier
+
+base URL - address of the server  - www.amazon.com
+end point - location of the API/entity - the specific information will be found here.
+
+URI = URL+ENDPOINT
+
+C - post
+R - get
+U - put
+D - delete
+
+we always create admin user at first. so that we can perform all CRUD operations after it.
+
+POSTMAN - to perform API testing manually, we use  this tool. SOAP UI, ARC etc are the other tools.
+
+create a request - create an admin
+
+Base URL = hrm.syntaxtechs.net/syntaxapi/api
+END point = /createUser.php
+only when we need to send/add record in the database, we need body
+body/payload = we send the body in JSON format. we pass json format in the form of key and value
+
+{
+  "name": "adminbatch17.",
+  "email": "tests@batch17.com",
+  "password": "Tests@123"
+}
+
+Base URI - hrm.syntaxtechs.net/syntaxapi/api/createUser.php
+TYPE OF REQUEST = POST
+
+FOR QA - series of 200 and 400 is important
+200 series is for successful
+400 series is for failure
+
+https://restfulapi.net/http-status-codes/
+
+For All POST request, we need these elements
+
+public API vs private API
+
+For private API's -
+
+4 questions we answer -
+Who are you?
+Are you allowed?
+Show your ID?
+What permission you have?
+
+
+authentication - It confirms your identity to grant permission to access the system.
+Example - The signin the facebook is the authentication
+
+authorization - It controls whether you are allowed to use the system and to perform certain operations in it
+
+
+Statefull application - when the server memory state is set to true, we call it statefull application
+
+for the first time, server checks the info with DB and saved it in server memory so that next time user doesn't need to provide the credentials
+
+here, load balancers are used to distribute the load equally among all the servers
+
+
+Stateless application - here the state of the server memory is set to false.
+
+in stateless application we work with sessionId/Tokens.
+
+we have to generate the token to show that we are admin user and we are allowed to perform crud operations.
+
+Token - JWT - Json web token
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.
+eyJpYXQiOjE3MDEwMjUxNjAsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTcwMTA2ODM2MCwidXNlcklkIjoiNjA3NyJ9.
+-FNq40iWIzaGaujG0aABU2zrWurlFfnm7ls_391NjkU
+
+Header - eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
+{
+  "typ": "JWT",
+  "alg": "HS256"
+}
+
+Payload - eyJpYXQiOjE3MDEwMjUxNjAsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTcwMTA2ODM2MCwidXNlcklkIjoiNjA3NyJ9
+{
+  "iat": 1701025160,
+  "iss": "localhost",
+  "exp": 1701068360,
+  "userId": "6077"
+}
+
+
+signature - -FNq40iWIzaGaujG0aABU2zrWurlFfnm7ls_391NjkU
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+
+your-256-bit-secret
+
+)
+
+JWT is of 3 types -
+
+Bearer token - bearer token
+Grants
+MAC token
+
+
+Admin user created
+token generated
+idea - Stateless application, we are going to work with
+
+CRUD -
+
+create  an employee -
+
+Base URI = hrm.syntaxtechs.net/syntaxapi/api/createEmployee.php
+Type of method = POST
+Body/payload =
+{
+  "emp_firstname": "hind",
+  "emp_lastname": "pak",
+  "emp_middle_name": "ms",
+  "emp_gender": "M",
+  "emp_birthday": "2002-11-25",
+  "emp_status": "confirmed",
+  "emp_job_title": "qa"
+}
+
+content-type = application/json
+
+
+Create an employee -> Get the employee
+Update the employee -> Get the employee
+Delete the employee -> Get the employee
+
+
+Class 3 -
+
+recap -
+
+base URI = base url + end point
+
+swagger document gives us this information
+
+CRUD - create, retrieve, update , delete
+
+post, get, delete, put
+
+admin user we created to perform crud operations in the system.
+
+authentication and authorization
+
+stateful and stateless
+
+JWT - json web token - we get session id in the form of token
+
+Bearer token
+MAC token
+grants
+
+token has 3 elements -
+header
+payload
+signature
+
+first operation we performed was -
+creating an employee
+
+post, body (json), url+endpoint, token(authorization) - response 201 -
+
+
+Create an employee -> Get the employee
+Update the employee -> Get the employee
+Partially update the employee -> Get the employee
+Delete the employee -> Get the employee
+
+
+When you work with stateful application, instead of bearer token, you should select 'basic auth' in authorization tab
+then enter username and password and save it.
+
+update the employee -
+
+put - to update the data completely
+patch - to update the information partially
+
+delete the employee -
+
+Cookies -
+
+cookies are the small blocks of data created by a web server while a user is browsing a website and placed on the user's computer or other device by the user's web browsr
+
+cookies are used to track the information of a user.
+in house cookies
+third party cookies
+
+
+Class 4 -
+recap -
+
+post
+get
+put
+patch
+delete
+
+when we work with multiple environments, we need to test API against different env.
+
+In environment, we can pass env variable and in globals we pass all the end points.
+
+
+In order to execute collection, we need test for every request
+
+chai assertion
+
+javascript syntax method
+
+function method name (){}
+
+postman has all the methods define in it
+
+pm is the postman object for chai assertion library which gives us all the assertions
+
+via this library we can validate anything
+
+validate status code
+validate response time
+validate message from the body
+validate response headers
+validate key vs value
+
+pm.test("Validate key and value", function(){
+        const responseJson = pm.response.json();
+        pm.expect(responseJson.employee.emp_firstname).to.eql("Alina");
+});
+
+validating the value in json format
+
+Rest Assured
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
