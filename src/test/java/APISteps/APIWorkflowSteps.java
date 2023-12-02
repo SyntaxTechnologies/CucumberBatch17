@@ -16,6 +16,7 @@ public class APIWorkflowSteps {
     public static String token;
     RequestSpecification request;
     Response response;
+    public static String employee_id;
 
     @Given("a JWT is generated")
     public void a_jwt_is_generated() {
@@ -63,6 +64,14 @@ public class APIWorkflowSteps {
                 body("Employee.emp_firstname",equalTo("hind"));
         response.then().assertThat().
                 header("Connection",equalTo("Keep-Alive"));
+    }
+
+    @Then("the employee id {string} is stored as global variable for other request")
+    public void the_employee_id_is_stored_as_global_variable_for_other_request
+            (String empId) {
+        //empId is the parameter coming from feature file which is the path of employee id
+        employee_id = response.jsonPath().getString(empId);
+        System.out.println(employee_id);
     }
 
 
