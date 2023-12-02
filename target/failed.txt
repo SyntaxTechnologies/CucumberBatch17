@@ -1,2 +1,0 @@
-file:src/test/resources/features/EmployeeSearch.feature:12
-file:src/test/resources/features/Login.feature:4
