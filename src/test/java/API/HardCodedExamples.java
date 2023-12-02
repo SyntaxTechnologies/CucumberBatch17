@@ -4,15 +4,19 @@ package API;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class HardCodedExamples {
 
     //in rest assured base uri = base URL
     String baseURI = RestAssured.baseURI = "http://hrm.syntaxtechs.net/syntaxapi/api";
-    String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEzMTMwNjMsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTcwMTM1NjI2MywidXNlcklkIjoiNjA3NyJ9.ye9mRiwsWz5pZKL9_LyiROS3A0R6N4TyKZR_Bx-ajn4";
+    String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDE1MzIwNDIsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTcwMTU3NTI0MiwidXNlcklkIjoiNjA3NyJ9.fH-5ITwDjpYGkQIcM_ttUe7Ob13u_Hp8K4uxrB4NriQ";
+    static String employee_id;
 
+    @Test
     public void createEmployee(){
         //prepare the request
        //request specification allows us to prepare the request and gives it in variable
@@ -32,9 +36,21 @@ public class HardCodedExamples {
         //response is the class which holds the complete response body and the info
         Response response =  request.when().post("/createEmployee.php");
 
-        //validate the response
-        response.then().assertThat().statusCode(201);
-    }
+        //to print the response in console
+        response.prettyPrint();
 
+        //validate the response status
+        response.then().assertThat().statusCode(201);
+        //validate the body
+        response.then().assertThat().
+                body("Message", equalTo("Employee Created"));
+        response.then().assertThat().
+                body("Employee.emp_firstname",equalTo("hind"));
+        response.then().assertThat().
+                header("Connection",equalTo("Keep-Alive"));
+        //to store the employee id after generating the employee
+        employee_id = response.jsonPath().getString("Employee.employee_id");
+        System.out.println(employee_id);
+    }
 
 }

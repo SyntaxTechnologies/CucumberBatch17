@@ -653,6 +653,32 @@ given - to prepare the request
 when - sending the request/hitting the endpoint
 then - validation/assertions
 
+class 5 -
+
+recap -
+
+REST assured library -
+
+DSL - domain specific language
+it allows us to send the data in json format
+BDD approach -
+given - prepare the request
+when - send the request / hit the end point
+then - validate the response
+
+rest assured
+json
+
+RequestSpecification - it allows us to prepare the request.
+Response - to hold the complete response of the request
+
+we validate different entities in response
+
+Hamcrest matchers - to verify and validate the data from the body - values, keys, messages etc
+This class contains methods to perform assertions.
+
+JsonPath - This is class
+jsonPath() - This is the method of JsonPath class.
 
 
 
