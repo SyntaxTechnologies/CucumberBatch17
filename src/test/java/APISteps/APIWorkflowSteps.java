@@ -8,6 +8,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 import utils.APIConstants;
+import utils.APIPayloadConstants;
 
 import java.util.List;
 import java.util.Map;
@@ -26,12 +27,19 @@ public class APIWorkflowSteps {
 
     @Given("a JWT is generated")
     public void a_jwt_is_generated() {
+       /*
         RequestSpecification request = given().
-                header("Content-Type","application/json").
+                header(APIConstants.Header_Content_Type_Key,APIConstants.Content_type_Value).
                 body("{\n" +
                         "  \"email\": \"tests@batch17.com\",\n" +
                         "  \"password\": \"Tests@123\"\n" +
                         "}");
+
+        */
+        RequestSpecification request = given().
+                header(APIConstants.Header_Content_Type_Key,APIConstants.Content_type_Value).
+                body(APIPayloadConstants.generateTokenPayload());
+
         Response response = request.when().post(APIConstants.GENERATE_TOKEN_URI);
         //storing the token after generating it
        token = "Bearer "+ response.jsonPath().getString("token");
@@ -40,8 +48,9 @@ public class APIWorkflowSteps {
 
     @Given("a request is prepared to create an employee")
     public void a_request_is_prepared_to_create_an_employee() {
-         request = given().header("Content-Type","application/json").
-                header("Authorization", token)
+       /*
+         request = given().header(APIConstants.Header_Content_Type_Key,APIConstants.Content_type_Value).
+                header(APIConstants.Header_Authorization_key, token)
                 .body("{\n" +
                         "  \"emp_firstname\": \"hind\",\n" +
                         "  \"emp_lastname\": \"pak\",\n" +
@@ -51,6 +60,11 @@ public class APIWorkflowSteps {
                         "  \"emp_status\": \"confirmed\",\n" +
                         "  \"emp_job_title\": \"qa\"\n" +
                         "}");
+
+        */
+        request = given().header(APIConstants.Header_Content_Type_Key,APIConstants.Content_type_Value).
+                header(APIConstants.Header_Authorization_key, token)
+                .body(APIPayloadConstants.createEmployeePayload());
     }
 
     @When("a POST call is made to create an employee")
@@ -84,14 +98,14 @@ public class APIWorkflowSteps {
     @Given("a request is prepared to get the created employee")
     public void a_request_is_prepared_to_get_the_created_employee() {
         request = given().
-                header("Content-Type","application/json").
-                header("Authorization", token).
+                header(APIConstants.Header_Content_Type_Key,APIConstants.Content_type_Value).
+                header(APIConstants.Header_Authorization_key, token).
                 queryParam("employee_id", employee_id);
     }
 
     @When("a GET call is made to get the employee")
     public void a_get_call_is_made_to_get_the_employee() {
-        response = request.when().get("/getOneEmployee.php");
+        response = request.when().get(APIConstants.GET_ONE_EMPLOYEE_URI);
         response.prettyPrint();
     }
 
