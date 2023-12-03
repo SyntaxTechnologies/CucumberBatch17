@@ -145,6 +145,16 @@ public class APIWorkflowSteps {
         }
     }
 
+    @Given("a request is prepared for creating an employee via json payload")
+    public void a_request_is_prepared_for_creating_an_employee_via_json_payload() {
+        request = given().header(APIConstants.Header_Content_Type_Key,APIConstants.Content_type_Value).
+                header(APIConstants.Header_Authorization_key, token)
+                .body(APIPayloadConstants.createEmployeeJsonPayload());
+    }
 
+    @Then("the response body contains {string} key and value {string}")
+    public void the_response_body_contains_key_and_value(String key, String value) {
+        response.then().assertThat().body(key,equalTo(value));
+    }
 
 }

@@ -688,6 +688,16 @@ class 6 -
 
 recap -
 
+we did hardcode in the rest assured request.
+we learned how to send the request and validate the response
+then we integrated api with the cucumber framework
+we create feature file, steps package(new), and separate runner class for API
+we created request here after writing the scenarios
+in order to make the request dynamic, we passed the endpoints, headers and body from
+constants classes
+**The intention behind creating the constants class is to make the request highly dynamic**
+
+
 
 
 
