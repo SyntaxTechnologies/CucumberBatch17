@@ -157,4 +157,16 @@ public class APIWorkflowSteps {
         response.then().assertThat().body(key,equalTo(value));
     }
 
+    @Given("a request is prepared for creating an employee with dynamic data {string} , {string} , {string} , {string} , {string} , {string} , {string}")
+    public void a_request_is_prepared_for_creating_an_employee_with_dynamic_data
+            (String firstName, String lastName, String middleName,
+             String gender, String birthday,
+             String status, String jobtitle) {
+        request = given().header(APIConstants.Header_Content_Type_Key,APIConstants.Content_type_Value).
+                header(APIConstants.Header_Authorization_key, token)
+                .body(APIPayloadConstants.payloadDynamic
+                        (firstName,lastName,middleName
+                ,gender,birthday,status,jobtitle));
+    }
+
 }
