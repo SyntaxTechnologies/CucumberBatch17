@@ -7,6 +7,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
+import utils.APIConstants;
 
 import java.util.List;
 import java.util.Map;
@@ -31,7 +32,7 @@ public class APIWorkflowSteps {
                         "  \"email\": \"tests@batch17.com\",\n" +
                         "  \"password\": \"Tests@123\"\n" +
                         "}");
-        Response response = request.when().post("/generateToken.php");
+        Response response = request.when().post(APIConstants.GENERATE_TOKEN_URI);
         //storing the token after generating it
        token = "Bearer "+ response.jsonPath().getString("token");
        System.out.println(token);
@@ -54,7 +55,7 @@ public class APIWorkflowSteps {
 
     @When("a POST call is made to create an employee")
     public void a_post_call_is_made_to_create_an_employee() {
-        response =  request.when().post("/createEmployee.php");
+        response =  request.when().post(APIConstants.CREATE_EMPLOYEE_URI);
         //to print the response in console
         response.prettyPrint();
     }
@@ -128,7 +129,8 @@ public class APIWorkflowSteps {
                 Assert.assertEquals(actualValue, expectedValue);
             }
         }
-
     }
+
+
 
 }
