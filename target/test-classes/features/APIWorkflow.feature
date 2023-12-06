@@ -28,10 +28,16 @@ Feature: Syntax API workflow feature
       And the employee id "Employee.employee_id" is stored as global variable for other request
       And the response body contains "Message" key and value "Employee Created"
 
-  @jsondynamic
+  @jsondynamic @update1
   Scenario: Creating the employee using json paylaod
     Given a request is prepared for creating an employee with dynamic data "hind" , "pak" , "ms" , "M" , "2002-11-25" , "confirmed" , "qa"
     When a POST call is made to create an employee
     Then the status code for this request is 201
     And the employee id "Employee.employee_id" is stored as global variable for other request
     And the response body contains "Message" key and value "Employee Created"
+
+  @update
+  Scenario: Updating the employee
+    Given a request is prepared to update an employee in HRMS system
+    When a PUT call is made to update the employee
+    Then the status code for updating the employee is 200

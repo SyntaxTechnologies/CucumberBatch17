@@ -698,6 +698,22 @@ constants classes
 **The intention behind creating the constants class is to make the request highly dynamic**
 
 
+Class 7
+
+Recap -
+we created the employee hard coded -> we retrieved the employee and validate it
+we created the employee using payload method -> we retrieved the employee and validate it
+we created the employee using json payload -> we retrieved the employee and validate it
+we created the employee using dynamic method -> we retrieved the employee and validate it
+
+hamcrest matchers - equalTo (it has assertions, through which we verify all keys
+and values of the body, response headers and messages)
+
+we are validating the status code
+we are validating the body of the response
+we are validating the headers of  the response
+we are validating the messages of the body
+
 
 
 
