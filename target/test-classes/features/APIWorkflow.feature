@@ -28,7 +28,7 @@ Feature: Syntax API workflow feature
       And the employee id "Employee.employee_id" is stored as global variable for other request
       And the response body contains "Message" key and value "Employee Created"
 
-  @jsondynamic @update1
+  @jsondynamic @update
   Scenario: Creating the employee using json paylaod
     Given a request is prepared for creating an employee with dynamic data "hind" , "pak" , "ms" , "M" , "2002-11-25" , "confirmed" , "qa"
     When a POST call is made to create an employee
