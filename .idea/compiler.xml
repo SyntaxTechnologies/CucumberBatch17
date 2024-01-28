@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="HRMSBATCH17" />
+        <module name="CucumberBatch17" />
       </profile>
     </annotationProcessing>
   </component>
