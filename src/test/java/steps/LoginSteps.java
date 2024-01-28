@@ -34,10 +34,10 @@ public class LoginSteps extends CommonMethods {
        // WebElement usernameTextField = driver.findElement(By.xpath("//*[@id='txtUsername']"));
     //    usernameTextField.sendKeys("admin");
       //  Thread.sleep(2000);
-        sendText(loginPage.usernameTextField, ConfigReader.getPropertyValue("username"));
+        sendText(loginPage.usernameTextField, ConfigReader.read("username"));
       //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
      //   WebElement passwordTextField = driver.findElement(By.cssSelector("input#txtPassword"));
-        sendText(loginPage.passwordTextField, ConfigReader.getPropertyValue("password"));
+        sendText(loginPage.passwordTextField, ConfigReader.read("password"));
        // passwordTextField.sendKeys("Hum@nhrm123");
 
     }
