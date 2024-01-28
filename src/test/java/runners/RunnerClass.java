@@ -28,6 +28,8 @@ import org.junit.runner.RunWith;
         //rerun plugin will create failed.txt under target for all failed tc
 )
 
+
+
 public class RunnerClass {
     //it will be empty
 }
